@@ -52,6 +52,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NET45WP8|AnyCPU'">
     <DocumentationFile>bin\NET45WP8\StructureMap.xml</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Developer Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>CommonAssemblyInfo.cs</Link>
@@ -261,7 +267,9 @@
   <ItemGroup Condition=" '$(Configuration)' == 'NET45WP8' ">
     <Compile Include="TypeExtensions.NET45.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Developer Key.snk" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
